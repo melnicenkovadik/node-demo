@@ -31,12 +31,15 @@ export class UserController extends BaseController implements IUserController {
 				method: 'post',
 				func: this.register,
 				middlewares: [new ValidateMiddleware(UserRegisterDto)],
-			}
+			},
 		]);
 	}
 
-
-	async login({ body }: Request<{}, {}, UserLoginDto>, res: Response, next: NextFunction): Promise<void> {
+	async login(
+		{ body }: Request<{}, {}, UserLoginDto>,
+		res: Response,
+		next: NextFunction,
+	): Promise<void> {
 		const result = await this.userService.validateUser(body);
 		if (!result) {
 			return next(new HTTPError(422, 'Неверный логин или пароль', 'login'));
@@ -44,7 +47,11 @@ export class UserController extends BaseController implements IUserController {
 		this.ok(res, { email: body.email });
 	}
 
-	async register({ body }: Request<{}, {}, UserRegisterDto>, res: Response, next: NextFunction): Promise<void> {
+	async register(
+		{ body }: Request<{}, {}, UserRegisterDto>,
+		res: Response,
+		next: NextFunction,
+	): Promise<void> {
 		const result = await this.userService.createUser(body);
 		if (!result) {
 			return next(new HTTPError(422, 'Такой пользователь уже существует', 'register'));

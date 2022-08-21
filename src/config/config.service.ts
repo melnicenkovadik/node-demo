@@ -8,16 +8,15 @@ import { TYPES } from '../types';
 export class ConfigService implements IConfigService {
 	private config: DotenvParseOutput | undefined;
 
-	constructor(
-		@inject(TYPES.ILogger) private logger: ILogger,
-	) {
+	constructor(@inject(TYPES.ILogger) private logger: ILogger) {
 		const result: DotenvConfigOutput = config();
 		if (result.error) {
-			this.logger.error('[ConfigService]: Не удалось загрузить конфигурацию из .env или он отсутствует');
+			this.logger.error(
+				'[ConfigService]: Не удалось загрузить конфигурацию из .env или он отсутствует',
+			);
 		}
 		this.logger.log('[ConfigService]: Конфигурация .env загружена');
 		this.config = result.parsed as DotenvParseOutput;
-
 	}
 
 	get<T extends string | number>(key: string): T | undefined {

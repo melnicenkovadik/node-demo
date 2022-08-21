@@ -37,5 +37,4 @@ export class User {
 		}
 		return false;
 	}
-
 }
