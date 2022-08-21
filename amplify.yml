@@ -1,0 +1,90 @@
+version: 1
+backend:
+  name: aws
+  config:
+    region: us-east-1
+    profile: default
+    role:
+      name: default
+      arn: arn:aws:iam::123456789012:role/default
+    bucket:
+      name: default
+      region: us-east-1
+      key: default
+      secret: default
+      versioning: false
+    api:
+      name: default
+      stage: default
+      domain: default.example.com
+      domain_aliases:
+        - example.com
+        - example.net
+      domain_name: default.example.com
+      domain_name_alias: example.com
+      description: default
+      authorizer:
+        name: default
+        id: default
+        type: default
+        provider:
+          name: default
+          id: default
+          type: default
+          authorizer_uri: default
+          authorizer_credentials: default
+          identity_source: default
+          identity_validation_expression: default
+          authorizer_result_ttl_in_seconds: default
+          authorizer_uri_parameters:
+            - name: default
+              value: default
+      logging:
+        level: default
+        include_cookies: false
+        bucket: default
+        prefix: default
+        exclude:
+          - default
+          - default
+      cache:
+        enabled: false
+        http_methods:
+          - default
+          - default
+        expires: default
+        exclude:
+          - default
+          - default
+        include:
+          - default
+          - default
+        statuses:
+          - default
+          - default
+        query_params:
+          - default
+          - default
+        headers:
+          - default
+          - default
+        body_params:
+          - default
+          - default
+        method_params:
+          - default
+          - default
+        uri_params:
+          - default
+          - default
+        result_params:
+          - default
+          - default
+        result_ttl_in_seconds: default
+        caching_rules:
+          - default
+          - default
+          - default
+          - default
+          - default
+          - default
