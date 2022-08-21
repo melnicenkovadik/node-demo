@@ -9,6 +9,7 @@
     "lint:fix": "eslint --fix src/**",
     "format": "prettier --write 'src/**'",
     "start": "tsc && node --experimental-modules --es-module-specifier-resolution=node dist/main",
+    "start:prod": "node --experimental-modules --es-module-specifier-resolution=node dist/main",
     "dev": "nodemon",
     "dev:inspect": "nodemon -e ts,json --exec node --inspect=localhost:9229 -r ts-node/register src/main.ts",
     "build": "tsc",
