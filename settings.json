@@ -1,0 +1,17 @@
+{
+  "[typescript]" :  {
+    "editor.fontSize": "14",
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascript]" :  {
+    "editor.fontSize": "14",
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
